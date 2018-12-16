@@ -4,6 +4,7 @@
   padding: 1rem 2rem;
   background: transparent;
   border-radius: .125rem;
+  border: 1px solid;
 
   &.small {
     padding: .5rem 1rem;
@@ -12,14 +13,35 @@
   &.large {
     padding: 2rem 2.5rem;
   }
+
+  &.accent {
+    color: $dark-accent;
+    border-color: $dark-accent;
+
+    &:hover {
+      color: $light-1;
+      background: $dark-accent;
+    }
+  }
 }
 
 .theme-dark {
   .btn {
     border: 1px solid $light-1;
+    color: $light-1;
+
     &:hover {
       color: $dark-1;
       background: $light-1;
+    }
+
+    &.inverse {
+      border: 1px solid $dark-1;
+      color: $dark-1;
+      &:hover {
+        background: $light-1;
+        color: $dark-1;
+      }
     }
   }
 }
@@ -27,9 +49,20 @@
 .theme-light {
   .btn {
     border: 1px solid $dark-1;
+    background: $light-1;
+
     &:hover {
       color: $light-1;
       background: $dark-3;
+    }
+
+    &.inverse {
+      border: 1px solid $light-1;
+      color: $light-1;
+      &:hover {
+        background: $dark-1;
+        color: $light-1;
+      }
     }
   }
 }

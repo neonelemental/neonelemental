@@ -1,6 +1,6 @@
 .animated {
-  transition: $transition-speed linear;
-  transition-timing-function: cubic-bezier(0.1, 0.15, 0.3, 0.45);
+  transition: all $transition-speed ease;
+  //transition-timing-function: cubic-bezier(0.1, 0.15, 0.3, 0.45);
 }
 
 .bg-light {
@@ -19,6 +19,14 @@
   padding-left: 2rem;
 }
 
+._ml {
+  margin-left: 1rem;
+}
+
+._mr {
+  margin-right: 1rem;
+}
+
 .box-shadow {
-  box-shadow: 0 1px 5px rgba(0, 0, 0, 0.15);
+  box-shadow: 1px 1px 8px rgba(0, 0, 0, 0.25);
 }

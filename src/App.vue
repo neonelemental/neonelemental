@@ -1,5 +1,5 @@
 <template>
-  <main id="app" class='animated' :class="theme.dark ? 'theme-dark' : 'theme-light'">
+  <main id="app" class='animated' :class="computedClasses">
     <nav>
       <div class="nav-left">
         <a href='javascript:void(0)' id='menu-toggle' class="animated btn small" @click="sidebarOpen = !sidebarOpen">
@@ -7,6 +7,9 @@
         </a>
       </div>
       <div class="nav-right">
+        <a class="btn small accent _mr" href="javascript:void(0)" @click="toggleTheme">
+          <font-awesome-icon icon="envelope"/>
+        </a>
         <a class="btn small accent" href="javascript:void(0)" @click="toggleTheme">
           <font-awesome-icon :icon="themeIcon"/>
         </a>
@@ -22,14 +25,18 @@
 
 <script>
   import Sidebar from '@sections/Sidebar'
+  import isMobile from '@mixins/isMobile'
 
   export default {
     components: {
       Sidebar
     },
+    mixins: [isMobile],
     data () {
+      let isMobile = this.isMobile()
+
       return {
-        sidebarOpen: true,
+        sidebarOpen: !isMobile,
         theme: {
           dark: true,
           light: false,
@@ -42,6 +49,12 @@
       },
       themeIcon () {
         return this.theme.dark ? 'lightbulb' : 'moon'
+      },
+      computedClasses () {
+        let classString = ''
+        classString += ( this.theme.dark ? 'theme-dark ' : 'theme-light ' )
+        classString += ( this.sidebarOpen ? 'mobile-menu-open ' : '') // If menu is open add mobile responsive class
+        return classString
       },
     },
     methods: {

@@ -8,6 +8,7 @@ module.exports = {
         '@organisms': path.resolve(__dirname, 'src/components/organisms'),
         '@sections': path.resolve(__dirname, 'src/components/sections'),
         '@view': path.resolve(__dirname, 'src/views'),
+        '@mixins': path.resolve(__dirname, 'src/mixins'),
       }
     }
   },

@@ -57,6 +57,7 @@ main {
 
   .content {
     flex: 3;
+    opacity: 1;
 
     @include breakpoint(desktop) {
       flex: 8;
@@ -74,6 +75,20 @@ main {
     background: darken($dark-accent, 18%);
   }
 
+  &.theme-light > .content {
+    background: #D3CCE3;  /* fallback for old browsers */
+    background: -webkit-linear-gradient(to right, #E9E4F0, #D3CCE3), url('../images/light-grey-terrazzo.png');;  /* Chrome 10-25, Safari 5.1-6 */
+    background: linear-gradient(to right, #E9E4F0, #D3CCE3), url('../images/light-grey-terrazzo.png');; /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+  }
+
+  &.mobile-menu-open {
+    @include breakpoint(tablet) {
+      .content {
+        opacity: 0;
+        flex: 0;
+      }
+    }
+  }
 }
 
 

@@ -2,16 +2,9 @@
   @extend .box-shadow;
 }
 
-.theme-dark {
+.theme-dark, .theme-light {
   .sidebar {
     background: darken($dark-accent, 9%);
     border-right: 1px solid $dark-1;
-  }
-}
-
-.theme-light {
-  .sidebar {
-    border-right: 1px solid $dark-3;
-    background: $light-2;
   }
 }
