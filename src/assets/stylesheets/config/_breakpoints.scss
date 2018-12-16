@@ -5,6 +5,9 @@
   @else if $point == laptop {
     @media (max-width: 64em) { @content ; }
   }
+  @else if $point == tablet-up {
+    @media (min-width: 50em) { @content ; }
+  }
   @else if $point == tablet {
     @media (max-width: 50em) { @content ; }
   }

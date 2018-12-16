@@ -47,11 +47,31 @@ main {
       flex: 3;
     }
 
-    &.collapsed {
-      //display: flex;
-      width: 50px;
-      min-width: 50px;
-      flex: 0;
+    @include breakpoint(tablet-up){
+      &.collapsed {
+        //display: flex;
+        width: 50px;
+        min-width: 50px;
+        flex: 0;
+      }
+    }
+
+    @include breakpoint(tablet) {
+      &.collapsed {
+        flex: 0;
+        width: 0;
+        padding: 0;
+        display: none;
+      }
+    }
+
+  }
+
+  @include breakpoint(tablet) {
+    &:not(.mobile-menu-open) {
+      .content {
+        padding-top: 4rem;
+      }
     }
   }
 
@@ -72,13 +92,24 @@ main {
   }
 
   &.theme-dark > .content {
-    background: darken($dark-accent, 18%);
+    background:
+      /* top, transparent red */
+      linear-gradient(
+          rgba(16,24,78, .55),
+          rgba(16,24,78, .66)
+      ),
+      url('../images/ep_naturalblack.png');
+    //background: darken($dark-accent, 18%);
   }
 
   &.theme-light > .content {
-    background: #D3CCE3;  /* fallback for old browsers */
-    background: -webkit-linear-gradient(to right, #E9E4F0, #D3CCE3), url('../images/light-grey-terrazzo.png');;  /* Chrome 10-25, Safari 5.1-6 */
-    background: linear-gradient(to right, #E9E4F0, #D3CCE3), url('../images/light-grey-terrazzo.png');; /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+    background:
+      /* top, transparent red */
+      linear-gradient(
+          rgba(255,255,255, 0.40),
+          rgba(255,255,255, 0.55)
+      ),
+      url('../images/greyzz.png');
   }
 
   &.mobile-menu-open {
