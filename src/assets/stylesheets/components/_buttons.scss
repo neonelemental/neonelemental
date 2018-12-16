@@ -1,0 +1,36 @@
+.btn {
+  @extend .animated;
+
+  padding: 1rem 2rem;
+  background: transparent;
+
+  &.small {
+    padding: .5rem 1rem;
+  }
+
+  &.large {
+    padding: 2rem 2.5rem;
+  }
+}
+
+.theme-dark {
+  .btn {
+    border: 1px solid $light-1;
+    &:hover {
+      color: $dark-1;
+      background: $light-1;
+    }
+  }
+}
+
+.theme-light {
+  .btn {
+    border: 1px solid $dark-1;
+    &:hover {
+      color: $light-1;
+      background: $dark-5;
+    }
+  }
+}
+
+

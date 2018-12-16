@@ -1,9 +1,28 @@
-@import './config/_colors.scss';
+@import './config/colors';
+@import './config/variables';
+@import './config/typography';
+@import './helpers';
 
-html, body {
-  background: $black;
+@import './components/theme-picker';
+@import './components/buttons';
+
+@import './themes/dark';
+@import './themes/light';
+
+
+html, body, main {
+  margin: 0;
+  height: 100vh;
+  width: 100vw;
+  font-family: $main-font;
 
   img.logo {
     height: 7rem;
   }
 }
+
+main {
+  position: relative;
+}
+
+

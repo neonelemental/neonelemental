@@ -1,0 +1,20 @@
+.animated {
+  transition: $transition-speed linear;
+  transition-timing-function: cubic-bezier(0.1, 0.15, 0.3, 0.45);
+}
+
+.bg-light {
+  background: $light-1;
+}
+
+.bg-dark {
+  background: $dark-1;
+}
+
+._pt {
+  padding-top: 2rem;
+}
+
+._pl {
+  padding-left: 2rem;
+}

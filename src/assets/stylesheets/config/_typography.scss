@@ -1,0 +1,40 @@
+@import url('https://fonts.googleapis.com/css?family=Inconsolata:400,700');
+$main-font: 'Inconsolata', monospace;
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+p,
+a {
+  @extend .animated;
+  margin: 0;
+}
+
+.theme-dark {
+  h1,
+  h2,
+  h3,
+  h4,
+  h5,
+  h6,
+  p,
+  a {
+    color: $light-1;
+  }
+}
+
+.theme-light {
+  h1,
+  h2,
+  h3,
+  h4,
+  h5,
+  h6,
+  p,
+  a {
+    color: $dark-1;
+  }
+}
