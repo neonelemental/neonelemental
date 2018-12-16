@@ -2,6 +2,7 @@
 @import './config/variables';
 @import './config/typography';
 @import './config/breakpoints';
+@import './config/animations';
 
 @import './helpers';
 
@@ -100,6 +101,8 @@ main {
       ),
       url('../images/ep_naturalblack.png');
     //background: darken($dark-accent, 18%);
+    background-position: 0px 0px;
+    animation: animatedBackground 45s ease-in infinite alternate;
   }
 
   &.theme-light > .content {
