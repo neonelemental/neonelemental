@@ -1,11 +1,10 @@
-$dark-1: #030609;
-$dark-2: #131619;
-$dark-3: #132639;
-$dark-4: #233649;
-$dark-5: #334659;
+$dark-1: #0a0a0a;
+$dark-2: lighten($dark-1, 3%);
+$dark-3: lighten($dark-1, 6%);
 
-$light-1: #f3f6f9;
-$light-2: #aaeef9;
-$light-3: #aaddf9;
-$light-4: #99ccf9;
-$light-5: #99bbff;
+$light-1: #fdfdfd;
+$light-2: darken($light-1, 3%);
+$light-3: darken($light-1, 6%);
+
+$light-accent: #20309a;
+$dark-accent: $light-accent;

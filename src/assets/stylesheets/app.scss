@@ -1,10 +1,14 @@
 @import './config/colors';
 @import './config/variables';
 @import './config/typography';
+@import './config/breakpoints';
+
 @import './helpers';
 
 @import './components/theme-picker';
 @import './components/buttons';
+@import './components/nav';
+@import './components/sidebar';
 
 @import './themes/dark';
 @import './themes/light';
@@ -14,15 +18,62 @@ html, body, main {
   margin: 0;
   height: 100vh;
   width: 100vw;
+  max-width: 100vw;
+  max-height: 100vh;
+  overflow: hidden;
   font-family: $main-font;
-
-  img.logo {
-    height: 7rem;
-  }
 }
 
 main {
   position: relative;
+  display: flex;
+  flex: 1;
+  flex-direction: row;
+
+  .sidebar {
+    @extend .animated;
+
+    flex: 1;
+    flex-direction: column;
+    padding: 2rem;
+    width: 50px;
+    min-width: 50px;
+
+    @include breakpoint(desktop) {
+      flex: 2;
+    }
+
+    @include breakpoint(mobileonly) {
+      flex: 3;
+    }
+
+    &.collapsed {
+      //display: flex;
+      width: 50px;
+      min-width: 50px;
+      flex: 0;
+    }
+  }
+
+  .content {
+    flex: 3;
+
+    @include breakpoint(desktop) {
+      flex: 8;
+    }
+
+    @include breakpoint(mobileonly) {
+      flex: 7;
+    }
+
+    flex-direction: column;
+    overflow-y: scroll;
+  }
+
+  &.theme-dark > .content {
+    background: darken($dark-accent, 18%);
+  }
+
 }
 
 
